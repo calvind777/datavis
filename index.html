@@ -87,7 +87,7 @@ svg.append("g")
     .append("text")
       .attr("class", "label")
       .attr("transform", "rotate(-90)")
-      .attr("y", 6)
+      .attr("y", -40)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Infant Mortality Rate per 1000")
@@ -96,10 +96,11 @@ svg.append("g")
       .data(data)
     .enter().append("circle")
       .attr("class", "dot")
-      .attr("r", 3.5)
+      .attr("r", 6)
+      .attr("opacity", 0.5)
       .attr("cx", function(d) { return x(d.GDP); })
       .attr("cy", function(d) { return y(d.Mortality); })
-      .style("fill", function(d) { return color(d.species); });
+      .style("fill", function(d) { return color(d.Continent); });
 
 
       var legend = svg.selectAll(".legend")
